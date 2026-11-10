@@ -378,6 +378,7 @@ def admin_logout():
     return redirect(url_for("admin_login"))
 
 
+create_tables()
 if __name__ == "__main__":
-    create_tables()
     app.run(debug=True)
+    
