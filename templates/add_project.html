@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="project-form-container">
+    <h1>Add New Project</h1>
+    <p>Enter your project details below.</p>
+
+    {% with messages = get_flashed_messages() %}
+        {% for message in messages %}
+            <p class="message">{{ message }}</p>
+        {% endfor %}
+    {% endwith %}
+
+    <form method="POST" enctype="multipart/form-data">
+
+        <label>Project Title</label>
+        <input type="text" name="title" placeholder="Enter project title" required>
+
+        <label>Description</label>
+        <textarea name="description" placeholder="Describe your project" required></textarea>
+
+        <label>Technologies</label>
+        <input type="text" name="technologies" placeholder="HTML, CSS, Python">
+
+        <label>Additional Project Screenshots</label>
+        <input
+          type="file"
+          name="screenshots"
+          accept="image/*"
+          multiple
+        >
+
+        <label>Demo Video (Optional)</label>
+        <input type="file" name="video" accept=".mp4,.webm">
+
+        <label>GitHub Link (Optional)</label>
+        <input type="url" name="github_link" placeholder="https://github.com/...">
+
+        <label>Live Demo Link (Optional)</label>
+        <input type="url" name="demo_link" placeholder="https://...">
+
+        <button type="submit">Add Project</button>
+
+    </form>
+
+    <a href="{{ url_for('admin_dashboard') }}">Back to Dashboard</a>
+</div>
+
+</body>
+</html>
+

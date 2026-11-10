@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Certification</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0 20px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        a {
+            display: block;
+            margin-top: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Add New Certification</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        <label>Certificate Title</label>
+        <input type="text" name="title" required>
+
+        <label>Organization</label>
+        <input type="text" name="organization">
+
+        <label>Issue Date</label>
+        <input type="date" name="issue_date">
+
+        <label>Upload Certificate (PDF/Image)</label>
+        <input type="file" name="certificate_file"
+               accept=".pdf,.png,.jpg,.jpeg,.webp">
+
+        <button type="submit">Add Certification</button>
+
+    </form>
+
+    <a href="{{ url_for('admin_dashboard') }}">Back to Dashboard</a>
+
+</div>
+
+</body>
+</html>
