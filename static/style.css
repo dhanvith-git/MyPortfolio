@@ -226,7 +226,7 @@ section p {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
-    align-items: start;
+    align-items: stretch;
 }
 
 .project-card {
@@ -235,6 +235,9 @@ section p {
     border-radius: 15px;
     overflow: hidden;
     transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .project-card:hover {
@@ -601,4 +604,15 @@ section p {
 
 .certificate-link:hover {
     text-decoration: underline;
+}
+
+.project-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-link {
+    margin-top: auto;
+    align-self: flex-start;
 }
