@@ -316,6 +316,7 @@ def add_certification():
         title = request.form.get("title", "").strip()
         organization = request.form.get("organization", "").strip()
         issue_date = request.form.get("issue_date", "").strip()
+        print("CERTIFICATE DATE RECEIVED:", repr(issue_date))
 
         if not issue_date:
            flash("Please select the certificate issue date.")
@@ -366,6 +367,11 @@ def add_certification():
             (title, organization, issue_date, certificate_path)
         )
         connection.commit()
+
+        print("CERTIFICATE SAVED:", connection.execute(
+       "SELECT title, issue_date FROM certifications ORDER BY id DESC LIMIT 1"
+        ).fetchone())
+        
         connection.close()
 
         flash("Certification added successfully!")
