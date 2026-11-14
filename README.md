@@ -4,13 +4,6 @@ Welcome to my personal portfolio! 👋
 
 I am a B.Tech student specializing in Artificial Intelligence and Machine Learning at Jain University. This portfolio showcases my skills, projects, certifications, and learning journey in technology.
 
-## 🌐 Live Portfolio
-
-**Visit my portfolio:**  
-https://myportfolio-y1s5.onrender.com
-
-You can explore my work directly through the live website without installing anything.
-
 ## 📌 Website Sections
 
 - **Home:** Introduction and welcome section.
