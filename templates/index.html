@@ -244,7 +244,7 @@
 
                     <p>
                         <strong>Date:</strong>
-                        {{ certificate.date }}
+                        {{ certificate.issue_date }}
                     </p>
                     {% if certificate.certificate_file %}
                         <a href="{{ url_for('static', filename=certificate.certificate_file) }}"
