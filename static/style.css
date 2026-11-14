@@ -562,29 +562,6 @@ section p {
     background: #8b6cff;
 }
 
-#contact_session
-
-
-.contact-section {
-    text-align: center;
-    padding: 50px 20px;
-}
-
-.contact-section h2 {
-    color: #65d6cc;
-    font-size: 30px;
-}
-
-.contact-section p {
-    color: #ffffff;
-    margin: 15px;
-}
-
-.contact-section a {
-    color: #65d6cc;
-    text-decoration: none;
-}
-
 .resume-btn {
     display: inline-block;
     background: #65d6cc;
@@ -616,3 +593,179 @@ section p {
     margin-top: auto;
     align-self: flex-start;
 }
+
+
+
+/* =================================
+   PROFESSIONAL CONTACT SECTION
+================================= */
+
+.contact-section {
+    padding: 85px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #081426, #101d35);
+}
+
+.contact-section h2 {
+    font-size: 34px;
+    color: #65eaff;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.contact-section > p {
+    color: #cbd5e1;
+    margin-bottom: 18px;
+    line-height: 1.7;
+}
+
+/* Email and LinkedIn links */
+.contact-section > p a {
+    color: #67dfff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-section > p a:hover {
+    color: #a78bfa;
+    text-decoration: underline;
+}
+
+.linkedin-contact a {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+}
+
+/* LinkedIn icon */
+.linkedin-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 27px;
+    height: 27px;
+    background: #0A66C2;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Contact form card */
+.contact-form-container {
+    width: 100%;
+    max-width: 620px;
+    margin: 42px auto 0;
+    padding: 38px;
+    background: linear-gradient(
+        145deg,
+        rgba(30, 58, 90, 0.95),
+        rgba(17, 35, 62, 0.95)
+    );
+    border: 1px solid rgba(103, 223, 255, 0.35);
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.28);
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.contact-form-container h3 {
+    color: #67e8f9;
+    font-size: 25px;
+    text-align: center;
+    margin: 0 0 30px;
+}
+
+/* Form fields */
+.contact-form .form-group {
+    margin-bottom: 23px;
+}
+
+.contact-form label {
+    display: block;
+    color: #e2e8f0;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px 16px;
+    background: #0b1830;
+    border: 1px solid #344c70;
+    border-radius: 9px;
+    color: #ffffff;
+    font-size: 15px;
+    box-sizing: border-box;
+    outline: none;
+    font-family: inherit;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #94a3b8;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #67e8f9;
+    box-shadow: 0 0 0 3px rgba(103, 232, 249, 0.15);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+/* Send button */
+.contact-submit {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: 12px;
+    background: linear-gradient(90deg, #06b6d4, #6366f1);
+    color: white;
+    border: none;
+    border-radius: 9px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 22px rgba(6, 182, 212, 0.28);
+}
+
+.contact-submit:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+}
+
+/* Mobile responsive design */
+@media (max-width: 600px) {
+    .contact-section {
+        padding: 55px 16px;
+    }
+
+    .contact-section h2 {
+        font-size: 28px;
+    }
+
+    .contact-form-container {
+        padding: 24px 18px;
+        margin-top: 30px;
+    }
+
+    .contact-form-container h3 {
+        font-size: 22px;
+    }
+
+    .contact-section > p {
+        font-size: 14px;
+    }
+}
+

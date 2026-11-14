@@ -219,6 +219,7 @@
 
 
 <!-- Certifications Section -->
+ 
 <section id="certifications" class="certifications-section">
 
     <h2>My Certifications</h2>
@@ -279,22 +280,78 @@
     </a>
 </section>
 
+
 <!-- Contact Section -->
 <section id="contact" class="contact-section">
+
     <h2>Contact Me</h2>
     <p>Let's connect and learn together!</p>
 
-    <p><strong>Email:</strong>
+    <!-- Email -->
+    <p>
+        <strong>Email:</strong>
         <a href="mailto:pdhanvith06072007@gmail.com">
             pdhanvith06072007@gmail.com
         </a>
     </p>
 
-    <p><strong>Phone:</strong>
-        <a href="tel:9493770363">9493770363</a>
+    <!-- LinkedIn -->
+    <p class="linkedin-contact">
+        <strong>LinkedIn:</strong>
+        <a href="https://www.linkedin.com/in/dhanvith-polepalli-7343763bb/"
+           target="_blank"
+           rel="noopener noreferrer">
+            <span class="linkedin-icon">in</span>
+            View My LinkedIn Profile
+        </a>
     </p>
-</section>
-    
 
-</body>
-</html>
+    <!-- Contact Form -->
+    <div class="contact-form-container">
+        <h3>Send Me a Message</h3>
+
+        <form class="contact-form"
+              action="https://formsubmit.co/pdhanvith06072007@gmail.com"
+              method="POST">
+
+            <div class="form-group">
+                <label for="visitor-email">Your Email Address</label>
+                <input type="email"
+                       id="visitor-email"
+                       name="email"
+                       placeholder="Enter your email"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="visitor-subject">Subject</label>
+                <input type="text"
+                       id="visitor-subject"
+                       name="_subject"
+                       placeholder="Enter subject"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="visitor-message">Message</label>
+                <textarea id="visitor-message"
+                          name="message"
+                          rows="5"
+                          placeholder="Write your message..."
+                          required></textarea>
+            </div>
+
+            <input type="text"
+                   name="_honey"
+                   style="display:none"
+                   tabindex="-1"
+                   autocomplete="off">
+
+            <button type="submit" class="contact-submit">
+                Send Message →
+            </button>
+
+        </form>
+    </div>
+
+</section>
