@@ -317,6 +317,10 @@ def add_certification():
         organization = request.form.get("organization", "").strip()
         issue_date = request.form.get("issue_date", "").strip()
 
+        if not issue_date:
+           flash("Please select the certificate issue date.")
+           return render_template("add_certification.html")
+    
         certificate = request.files.get("certificate_file")
 
         if not title:
@@ -361,7 +365,6 @@ def add_certification():
             """,
             (title, organization, issue_date, certificate_path)
         )
-
         connection.commit()
         connection.close()
 
