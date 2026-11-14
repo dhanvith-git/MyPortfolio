@@ -25,13 +25,13 @@ I am a B.Tech student specializing in Artificial Intelligence and Machine Learni
 
 ## 🚀 How to View My Portfolio
 
-1. Open the live portfolio link: https://myportfolio-y1s5.onrender.com
-2. Explore the Home and About sections.
-3. Navigate to the Skills section to view my technical skills.
-4. Visit the Projects section to explore my work and GitHub repositories.
-5. Open the Certifications section to view my achievements.
-6. Visit the Contact section to connect with me.
-7. Use the Resume option to view or download my resume.
+
+1. Explore the Home and About sections.
+2. Navigate to the Skills section to view my technical skills.
+3. Visit the Projects section to explore my work and GitHub repositories.
+4. Open the Certifications section to view my achievements.
+5. Visit the Contact section to connect with me.
+6. Use the Resume option to view or download my resume.
 
 ## 💻 Run the Project Locally (For Developers)
 
