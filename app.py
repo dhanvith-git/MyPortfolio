@@ -35,11 +35,13 @@ VIDEO_EXTENSIONS = {"mp4", "webm"}
 
 
 # Admin credentials from environment variables
-ADMIN_USERNAME = "dhanvith"
-ADMIN_PASSWORD_HASH = generate_password_hash("Dhanvith@123")
-print("Admin username:", ADMIN_USERNAME)
-print("Password hash loaded:", bool(ADMIN_PASSWORD_HASH))
+ADMIN_USERNAME = os.environ.get("ADMIN_USERNAME")
+ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD")
 
+ADMIN_PASSWORD_HASH = (
+    generate_password_hash(ADMIN_PASSWORD)
+    if ADMIN_PASSWORD else None
+)
 
 # Database connection
 def get_db_connection():
@@ -110,7 +112,7 @@ def create_tables():
     connection.close()
     
 
-
+d
 # Admin login protection
 def admin_required(function):
     @wraps(function)
@@ -165,9 +167,7 @@ def admin_login():
 
         username = request.form.get("username", "").strip()
         password = request.form.get("password", "")
-        print("Username matches:", username == ADMIN_USERNAME)
-        print("Password matches:", check_password_hash(ADMIN_PASSWORD_HASH, password))
-
+        
         if username == ADMIN_USERNAME and ADMIN_PASSWORD_HASH and check_password_hash(ADMIN_PASSWORD_HASH, password):
          
          session["admin_logged_in"] = True            
