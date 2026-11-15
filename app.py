@@ -184,16 +184,20 @@ def admin_login():
 def admin_dashboard():
 
     connection = get_db_connection()
-
     projects = connection.execute(
         "SELECT * FROM projects ORDER BY id DESC"
+    ).fetchall()
+
+    certifications = connection.execute(
+    "SELECT * FROM certifications ORDER BY id DESC"
     ).fetchall()
 
     connection.close()
 
     return render_template(
         "admin_dashboard.html",
-        projects=projects
+        projects=projects,
+        certifications=certifications
     )
 @app.route("/admin/delete-project/<int:project_id>", methods=["POST"])
 @admin_required
@@ -378,6 +382,48 @@ def add_certification():
         return redirect(url_for("admin_dashboard"))
 
     return render_template("add_certification.html")
+
+# Delete Certification
+@app.route("/admin/delete_certification/<int:cert_id>", methods=["POST"])
+@admin_required
+def delete_certification(cert_id):
+    connection = get_db_connection()
+
+    certificate = connection.execute(
+        "SELECT certificate_file FROM certifications WHERE id = ?",
+        (cert_id,)
+    ).fetchone()
+
+    if certificate:
+        certificate_path = certificate["certificate_file"]
+
+        connection.execute(
+            "DELETE FROM certifications WHERE id = ?",
+            (cert_id,)
+        )
+        connection.commit()
+        connection.close()
+
+        # Delete the uploaded file too, if it exists
+        if certificate_path:
+            full_path = os.path.abspath(
+                os.path.join(app.root_path, "static", certificate_path)
+            )
+            cert_folder = os.path.abspath(
+                os.path.join(app.root_path, "static", "certifications")
+            )
+
+            if (os.path.commonpath([cert_folder, full_path]) == cert_folder
+                    and os.path.isfile(full_path)):
+                os.remove(full_path)
+
+        flash("Certification deleted successfully!")
+    else:
+        connection.close()
+        flash("Certification not found.")
+
+    return redirect(url_for("admin_dashboard"))
+
 
 # Admin logout
 @app.route("/admin/logout")

@@ -84,8 +84,45 @@
             {% else %}
                 <p>No projects found. Start by adding a new project!</p>
             {% endif %}
+           
+        </section>
+   
+    
+        <!-- Certifications Section -->
+        <section class="projects-section">
+            <h2>Your Certifications</h2>
+
+            {% if certifications %}
+                <div class="projects-grid">
+                    {% for certificate in certifications %}
+                        <div class="project-card">
+                            <h3>{{ certificate.title }}</h3>
+                            <p>Organization: {{ certificate.organization }}</p>
+                            <p>Issue Date: {{ certificate.issue_date }}</p>
+
+                            {% if certificate.certificate_file %}
+                                <a href="{{ url_for('static', filename=certificate.certificate_file) }}"
+                                   target="_blank">
+                                    View Certificate
+                                </a>
+                            {% endif %}
+
+                            <form method="POST"
+                                  action="{{ url_for('delete_certification', cert_id=certificate.id) }}"
+                                  onsubmit="return confirm('Delete this certification?');">
+                                <button type="submit" class="delete-btn">
+                                    Delete
+                                </button>
+                            </form>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p>No certifications found.</p>
+            {% endif %}
+        </section>
 
     </div>
 
-</body>
+</body>-
 </html>
