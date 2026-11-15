@@ -220,6 +220,7 @@
 
 <!-- Certifications Section -->
  
+
 <section id="certifications" class="certifications-section">
 
     <h2>My Certifications</h2>
@@ -227,43 +228,44 @@
     <p class="section-description">
         Certificates and achievements from my learning journey.
     </p>
+
     <div class="certification-grid">
-        {% if certifications %}
-            {% for certificate in certifications %}
-                <div class="certification-card">
-                    <div class="certificate-icon">
-                        <span>🏆</span>
-                    </div>
 
-                    <h3>{{ certificate.title }}</h3>
+        <!-- Certificate 1 -->
+        <div class="certification-card">
+            <div class="certificate-icon">
+                <span>🏆</span>
+            </div>
 
-                    <p>
-                        <strong>Issued by:</strong>
-                        {{ certificate.organization }}
-                    </p>
+            <h3>Cybersecurity Awareness Training</h3>
 
-                    <p>
-                        <strong>Date:</strong>
-                        {{ certificate.issue_date }}
-                    </p>
-                    {% if certificate.certificate_file %}
-                        <a href="{{ url_for('static', filename=certificate.certificate_file) }}"
-                            target="_blank"
-                            class="certificate-link">
-                            View Certificate →
-                         </a>
-                    {% endif %}
-               
+            <p><strong>Issued by:</strong> Jain University</p>
+            <p><strong>Date:</strong> 2026-10-31</p>
 
-                </div>
+            <a href="{{ url_for('static', filename='certifications/Cyber_Awareness_Certificate_-_POLEPALLI_DHANVITH.pdf') }}"
+               target="_blank"
+               class="certificate-link">
+                View Certificate →
+            </a>
+        </div>
 
-            {% endfor %}
+        <!-- Certificate 2 -->
+        <div class="certification-card">
+            <div class="certificate-icon">
+                <span>🏆</span>
+            </div>
 
-        {% else %}
+            <h3>Building a Job Ready Skill in the AI Era</h3>
 
-            <p>No certifications added yet.</p>
+            <p><strong>Issued by:</strong> NXTWave Academy</p>
+            <p><strong>Date:</strong> 2026-01-27</p>
 
-        {% endif %}
+            <a href="{{ url_for('static', filename='certifications/certifications_1_3.pdf') }}"
+               target="_blank"
+               class="certificate-link">
+                View Certificate →
+            </a>
+        </div>
 
     </div>
 
