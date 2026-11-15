@@ -112,7 +112,7 @@ def create_tables():
     connection.close()
     
 
-d
+
 # Admin login protection
 def admin_required(function):
     @wraps(function)
